@@ -16,14 +16,14 @@ class Appointment {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column('varchar')
+  @Column()
   provider_id: string;
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'provider_id' })
   provider: User;
 
-  @Column('varchar')
+  @Column()
   user_id: string;
 
   @ManyToOne(() => User)
