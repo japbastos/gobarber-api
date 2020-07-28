@@ -72,10 +72,6 @@ class CreateAppointmentService {
       content: `Novo agendamento para o dia ${dateFormatted}`,
     });
 
-    console.log(
-      `providers-list:${provider_id}:${format(appointmentDate, 'yyyy-M-d')}`,
-    );
-
     await this.cacheProvider.invalidate(
       `providers-list:${provider_id}:${format(appointmentDate, 'yyyy-M-d')}`,
     );
