@@ -6,8 +6,7 @@ import AppError from '@shared/errors/AppError';
 import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
-// import Notification from '@modules/notifications/infra/typeorm/schemas/Notification';
-// `providers-list:${provider_id}:${year}:${month}:${day}`
+
 import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
 
 interface IRequest {
