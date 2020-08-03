@@ -1,69 +1,52 @@
-# Recuperação de senha
+# GoBarber API
 
-**RF** Requisitos Funcionais
+### A barber scheduling app that allows users to schedule an appointment with his favorite barber and shows to the barber his agenda for the day.
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+## :rocket: Technologies
 
-**RNF** Requisitos Não-Funcionais
+This project was developed at the [RocketSeat GoStack Bootcamp](https://rocketseat.com.br/bootcamp) with the following technologies:
 
-- Utilizar Mailtrap para testar envios em dev;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job).
+- [Node.js][nodejs]
+- [Express](https://expressjs.com/)
+- [TypeORM](https://typeorm.io/#/)
+- [Docker](https://www.docker.com/docker-community)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Redis](https://redis.io/)
+- [MongoDB](https://www.mongodb.com/)
+- [JWT](https://jwt.io/)
+- [Multer](https://github.com/expressjs/multer)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Yup](https://www.npmjs.com/package/yup)
+- [Nodemailer](https://nodemailer.com/about/)
+- [date-fns](https://date-fns.org/)
+- [DotEnv](https://www.npmjs.com/package/dotenv)
+- [tsyringe](https://github.com/microsoft/tsyringe)
+- [VS Code][vc] with [ESLint][vceslint], [EditorConfig][vceditconfig] and [Prettier][vcprettier]
 
-**RN** Regras de Negócio
+## :information_source: How To Use
 
-- O link enviado por e-mail, para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha, ao resetar sua senha;
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v12.18][nodejs] or higher + [Yarn v1.22][yarn] or higher installed on your computer.
+From your command line:
 
-# Atualização do perfil
+```bash
+# Clone this repository
+$ git clone https://github.com/JapBastos/gobarber-api
 
-**RF**
+# Go into the repository
+$ cd gobarber-api
 
-- O usuário deve poder atualizar seu nome, email e senha;
+# Install dependencies
+$ yarn
 
-**RN**
+# Run to start the development server
+$ yarn dev:server
+```
 
-- O usuário não pode alterar seu email para um email já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+Made with ♥ by João Bastos [Get in touch!](https://www.linkedin.com/in/japbastos/)
 
-# Painel do prestador
-
-**RF**
-
-- O prestador deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
-
-**RNF**
-
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
-
-**RN**
-
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
-
-# Agendamento de serviços
-
-**RF**
-
-- O usuário deve poder listar todos os prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder listar um novo agendamento com um prestador;
-
-**RNF**
-
-- A listagem de prestadores deve ser armazenada em cache;
-
-**RN**
-
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro Às 8h, último às 17h);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+[vcprettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
